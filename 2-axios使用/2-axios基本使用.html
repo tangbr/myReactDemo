@@ -52,6 +52,38 @@
     });
     }
 
+         //第三个，更新数据
+         btns[2].onclick = function(){
+        //发送AJAX请求
+        axios({
+        //请求类型
+        method:'PUT',
+        //URL
+        url:'http://localhost:3000/posts/3',
+        //设置请求体
+        data: {
+            title: "今天天气不错， 还挺风和日丽的",
+            author: "李四"
+        }
+    }).then(response => {
+        console.log(response);
+    });
+    }
 
+
+     //第四个，删除数据
+     btns[3].onclick = function(){
+        //发送AJAX请求
+        axios({
+        //请求类型
+        method:'delete',  //可以小写
+        //URL
+        url:'http://localhost:3000/posts/3',
+        //此处无需设置请求体
+ 
+    }).then(response => {
+        console.log(response);
+    });
+    }
 </script>
 </html>
