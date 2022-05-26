@@ -4,7 +4,7 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { createRoot } from 'react-dom/client'
 
-import {BrowserRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 //引入App
 import App from './App'
 
@@ -15,5 +15,5 @@ import App from './App'
 
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<BrowserRouter><App/></BrowserRouter>);
+root.render(<HashRouter><App/></HashRouter>);
 

@@ -3,15 +3,26 @@ import './index.css'
 
 export default class List extends Component {
     render() {
+      const {users,isFirst, isLoading,err} = this.props
        return (
             <div className="row">
-                <div className="card">
-           <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
-             <img alt="head_portrait" src="https://img1.baidu.com/it/u=3916367244,2765862625&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" style={{width: '100px'}} />
-           </a>
-           <p className="card-text">reactjs</p>
-                </div>
-                <div className="card">
+            {
+                isFirst ? <h2>欢迎使用， 输入关键字， 随后点击搜索</h2> :
+                isLoading ? <h2>Loading..........</h2>:
+                err ? <h2 style={{color:'red'}}>{err}</h2> :
+                users.map((userObj)=>{
+                  return (
+                    <div key={userObj.id} className="card">
+                        <a rel="noreferrer" href={userObj.html_url} target="_blank">
+                            <img alt="head_portrait" src={userObj.avatar_url} style={{width: '100px'}} />
+                        </a>
+                        <p className="card-text">{userObj.login}</p>
+                    </div>
+                  )
+                })
+            }
+
+{/*                 <div className="card">
            <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
              <img alt="head_portrait" src="https://img2.baidu.com/it/u=457681302,3981348939&fm=253&fmt=auto&app=138&f=JPEG?w=352&h=288" style={{width: '100px'}} />
            </a>
@@ -34,7 +45,9 @@ export default class List extends Component {
              <img alt="head_portrait" src="https://img1.baidu.com/it/u=1847922946,915956888&fm=253&fmt=auto&app=138&f=JPEG?w=343&h=400" style={{width: '100px'}} />
            </a>
            <p className="card-text">reactjs</p>
-                </div>
+                </div> */}
+
+
             </div>
        )
     }

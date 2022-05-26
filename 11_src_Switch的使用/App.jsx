@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import {Route,Switch,Redirect} from 'react-router-dom'
+import {Route,Switch} from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import MyNavLink from './components/MyNavLink'
+import Test from './pages/Test'
 
 export default class App extends Component {
  render() {
@@ -30,9 +31,9 @@ export default class App extends Component {
                  <div className="panel-body">
                     {/* 注册路由 */}
                     <Switch>
-                        <Route  path="/about" component={About}/>
-                        <Route  path="/home" component={Home}/>
-                        <Redirect to="/about"/>
+                        <Route path="/about" component={About}/>
+                        <Route path="/home" component={Home}/>
+                        <Route path="/home" component={Test}/>
                     </Switch>
                  </div>
               </div>
