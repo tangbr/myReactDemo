@@ -21,6 +21,7 @@ export default class Home extends Component {
                                           <MyNavLink to="/home/message">Message</MyNavLink>
                                       </li>
                                   </ul>
+                                  <hr/>
                                   {/*  注册路由  */}
                                   <Switch>
                                     <Route path="/home/news" component={News}/>
